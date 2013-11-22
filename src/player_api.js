@@ -12,10 +12,11 @@ if (!SV) {
             var _videoId = options.videoId;
             var _playlistId = options.playlistId;
             var _type = options.type || 'video';
+            var _scheme = options.scheme || 'http';
             var _volume = 1,_duration = 0,_currentTime = 0,_loaded = 0,_email = null,_listeners={};
 
             var _sendMessage = function(message) {
-                _iframe.contentWindow.postMessage(message, 'http://videos.sproutvideo.com');
+                _iframe.contentWindow.postMessage(message, _scheme + '://videos.sproutvideo.com');
             };
 
             var _getIframeByVideoId = function(id, type) {
