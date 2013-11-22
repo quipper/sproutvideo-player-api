@@ -11,6 +11,7 @@ if (!SV) {
         SV.Player = function(options) {
             var _videoId = options.videoId;
             var _playlistId = options.playlistId;
+            var _type = options.type || 'video';
             var _volume = 1,_duration = 0,_currentTime = 0,_loaded = 0,_email = null,_listeners={};
 
             var _sendMessage = function(message) {
@@ -27,7 +28,7 @@ if (!SV) {
                 }
             };
 
-            var _iframe = _getIframeByVideoId(_videoId||_playlistId);
+            var _iframe = _getIframeByVideoId(_videoId||_playlistId, _type);
 
             if (!_iframe) {
                 throw 'Can not find video iframe';
