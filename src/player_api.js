@@ -8,6 +8,13 @@ if (!SV) {
     }
     
     if (!SV.Player) {
+        /*
+          SV.Player({
+            videoId: 'abc123',
+            type:    'video',
+            scheme:  'https'
+          });
+        **/
         SV.Player = function(options) {
             var _videoId = options.videoId;
             var _playlistId = options.playlistId;
